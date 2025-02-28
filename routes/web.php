@@ -66,7 +66,7 @@ function loadArticles(): array
             "updated_at" => "2023-10-15 09:30:00",
         ],
         [
-            "id" => 1,
+            "id" => 2,
             "page_title" => "ICT Field Of Work",
             "title" => "ICT Field Of Work",
             "content" => "Hello internet! I like web development, this field of engineering allows products to be
@@ -78,7 +78,7 @@ function loadArticles(): array
             "updated_at" => "2023-10-15 09:30:00",
         ],
         [
-            "id" => 1,
+            "id" => 3,
             "title" => "My programming biography",
             "page_title" => "My programming biography",
             "content" => "Since 2018 I have been enjoying programming, I started by making small programs in the BASIC
@@ -98,7 +98,7 @@ function loadArticles(): array
             "updated_at" => "2023-10-15 09:30:00",
         ],
         [
-            "id" => 1,
+            "id" => 4,
             "page_title" => "Study Choice",
             "title" => "Study Choice",
             "content" => "Hello internet! I chose this study direction because I like web development and I plan
@@ -110,7 +110,7 @@ function loadArticles(): array
             "updated_at" => "2023-10-15 09:30:00",
         ],
         [
-            "id" => 1,
+            "id" => 5,
             "page_title" => "SWOT Analysis",
             "title" => "SWOT Analysis",
             "content" => "<ul>
