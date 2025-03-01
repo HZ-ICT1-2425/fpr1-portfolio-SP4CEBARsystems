@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 class Course extends Controller
 {
+    public string $name;
     private float $credits;
     private array $grades = [];
 
-    public function __construct(float $credits, ...$grades)
+    public function __construct($name, float $credits, ...$grades)
     {
+        $this->name = $name;
         $this->credits = $credits;
         $this->grades = $grades;
     }

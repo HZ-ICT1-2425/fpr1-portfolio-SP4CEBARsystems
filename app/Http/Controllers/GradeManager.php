@@ -6,37 +6,42 @@ use Illuminate\Http\Request;
 
 class GradeManager extends Controller
 {
-    private array $courses = [];
+    private array $quartiles = [];
 
-    public function __construct(...$courses)
+    public function __construct(...$quartiles)
     {
-        $this->courses = $courses;
+        $this->quartiles = $quartiles;
     }
 
-    public function addCourses(Course ...$courses): GradeManager
+    public function addQuartiles(Quartile ...$quartiles): GradeManager
     {
-        $this->courses = array_merge($this->courses, $courses);
+        $this->quartiles = array_merge($this->quartiles, $quartiles);
         return $this;
+    }
+
+    public function getQuartiles(): array
+    {
+        return $this->quartiles;
     }
 
     public function getTotalCreditsEarned(): float
     {
         $totalCredits = 0;
-        foreach ($this->courses as $course) {
-            $totalCredits += $course->getCreditsEarned();
+        foreach ($this->quartiles as $quartile) {
+            $totalCredits += $quartile->getTotalCreditsEarned();
         }
         return $totalCredits;
     }
 
     public function saveGrades(): void
     {
-        $_SESSION['courses'] = serialize($this->courses);
+        $_SESSION['quartiles'] = serialize($this->quartiles);
     }
 
     public function loadGrades(): void
     {
-        if (isset($_SESSION['courses'])) {
-            $this->courses = unserialize($_SESSION['courses']);
+        if (isset($_SESSION['quartiles'])) {
+            $this->quartiles = unserialize($_SESSION['quartiles']);
         }
     }
 }

@@ -24,15 +24,63 @@ class GradeController extends Controller
     private function getCourses(): GradeManager
     {
         $gradeManager = new GradeManager(
-            new Course(
-                3,
-                new Grade(6.0, 1.0),
-                new Grade(7.0, 1.5)
+            new Quartile(
+                "Introduction to Computer Science",
+                new Course(
+                    "Program & Career Orientation",
+                    2.5,
+                    new Exam("Presentation (individual)", 1.0, 100.0)
+                ),
+                new Course(
+                    "Computer Science Basics",
+                    5.0,
+                    new Exam("Written knowledge test", 1.0, 100.0)
+                ),
+                new Course(
+                    "Programming Basics",
+                    5.0,
+                    new Exam("Case test", 1.0, 100.0)
+                ),
+                new Course(
+                    "Personal Professional Development Exploration",
+                    12.5,
+                    new Exam("Criterion-focused interview", 1.0, 100.0)
+                )
             ),
-            new Course(
-                4,
-                new Grade(5.0, 1.0),
-                new Grade(8.0, 1.2)
+            new Quartile(
+                "Game Development",
+                new Course(
+                    "Object-Oriented Programming",
+                    10.0,
+                    new Exam("Group presentation", 1.0, 50.0),
+                    new Exam("Written knowledge test", 1.0, 50.0)
+                )
+            ),
+            new Quartile(
+                "Modern Software Development 1",
+                new Course(
+                    "Framework Project 1",
+                    10.0,
+                    new Exam("On-site case test", 1.0, 40.0),
+                    new Exam("Database exam", 1.0, 10.0),
+                    new Exam("Group presentation project results", 1.0, 25.0),
+                    new Exam("Group portfolio on requirements", 1.0, 25.0)
+                ),
+                new Course(
+                    "Business IT Consultancy Basics",
+                    2.5,
+                    new Exam("Video", 1.0, 100.0)
+                )
+            ),
+            new Quartile(
+                "Modern Software Development 2",
+                new Course(
+                    "Framework Project 2",
+                    10.0,
+                    new Exam("Final delivery", 1.0, 25.0),
+                    new Exam("Individual project assessment", 1.0, 25.0),
+                    new Exam("IT development portfolio", 1.0, 50.0)
+                )
             )
         );
         $gradeManager->saveGrades();
