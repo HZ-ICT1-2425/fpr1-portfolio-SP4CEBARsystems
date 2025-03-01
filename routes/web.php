@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GradeController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 function loadArticles(): array
@@ -160,35 +162,16 @@ function findArticle($id) {
     }
 }
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [PageController::class, 'index'])->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard', [GradeController::class, 'dashboard']);
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile', [PageController::class, 'profile']);
 
-Route::get('/blog', function () {
-    return view('articles.index');
-});
+Route::get('/blog', [PageController::class, 'blogIndex']);
 
-Route::get('blog/{id}', function () {
-    return view(
-        'articles.show',
-        [
-            'article' => findArticle(request('id'))
-        ]
-    );
-});
+Route::get('blog/{id}', [PageController::class, 'blogShow']);
 
-Route::get('/faq', function () {
-    return view('faq.index');
-});
+Route::get('/faq', [PageController::class, 'faqIndex']);
 
-Route::get('faq/{id}', function () {
-    return view('faq.show');
-});
+Route::get('faq/{id}', [PageController::class, 'faqShow']);

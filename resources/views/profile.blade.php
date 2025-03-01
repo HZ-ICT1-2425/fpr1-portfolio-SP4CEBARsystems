@@ -9,13 +9,13 @@
                     <a href="https://github.com/SP4CEBARsystems" target="_blank" rel="noopener noreferrer">my GitHub
                         profile</a>
                     <p>
-                        I am Boaz Crezee, a 21-year-old amateur programmer, runner, and christian from Vlissingen. As
+                        I am Boaz Crezee, a 21-year-old amateur programmer, runner, and Christian from Vlissingen. As
                         far as I can remember I have been interested by, thinking about, developing, drawing, and or
                         building intricate systems, machines, and devices.
                     </p>
 
                     <h3>Running</h3>
-                    <p>I like running, from around 2014 to 2023 I have been part of an Athletics club. Zeeland is the
+                    <p>I like running, from around 2014 to 2023 I have been part of an athletics club. Zeeland is the
                         perfect place to run thanks to its flat terrain and beautiful coastline.</p>
                     <p>I've run Zeeland's coastal marathon in 2021 and in 2022, it is a 42-kilometer run from the
                         city of Burgh-Haemstede in Schouwen-Duiveland to the village Zoutelande in Walcheren. the

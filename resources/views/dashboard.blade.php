@@ -4,7 +4,7 @@
             <div class="textAndImage codeImageBackground firstBar">
                 <div class=textBackground>
                     <h2>Dashboard</h2>
-                    <p>Study Progress <span id="progressValue"></span>EC / 60EC</p>
+                    <p>Study Progress <span id="progressValue">{{ $gradeManager->getTotalCreditsEarned() }}</span>EC / 60EC</p>
                     <div class="table">
                         <progress id="progressMeter" max="60" value="70">70%</progress>
 
