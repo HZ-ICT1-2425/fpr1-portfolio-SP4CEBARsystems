@@ -18,19 +18,6 @@ class PageController extends Controller
         return view('faq.index');
     }
 
-    function blogShow() {
-        return view(
-            'articles.show',
-            [
-                'article' => findArticle(request('id'))
-            ]
-        );
-    }
-
-    function blogIndex() {
-        return view('articles.index');
-    }
-
     function profile() {
         return view('profile');
     }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 function loadArticles(): array
@@ -168,9 +169,9 @@ Route::get('/dashboard', [GradeController::class, 'dashboard']);
 
 Route::get('/profile', [PageController::class, 'profile']);
 
-Route::get('/blog', [PageController::class, 'blogIndex']);
+Route::get('/blog', [PostController::class, 'blogIndex']);
 
-Route::get('blog/{id}', [PageController::class, 'blogShow']);
+Route::get('blog/{id}', [PostController::class, 'blogShow']);
 
 Route::get('/faq', [PageController::class, 'faqIndex']);
 
