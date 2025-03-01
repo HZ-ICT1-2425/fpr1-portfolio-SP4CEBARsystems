@@ -169,9 +169,9 @@ Route::get('/dashboard', [GradeController::class, 'dashboard']);
 
 Route::get('/profile', [PageController::class, 'profile']);
 
-Route::get('/blog', [PostController::class, 'blogIndex']);
+Route::get('/posts', [PostController::class, 'blogIndex']);
 
-Route::get('blog/{id}', [PostController::class, 'blogShow']);
+Route::get('posts/{id}', [PostController::class, 'blogShow']);
 
 Route::get('/faq', [PageController::class, 'faqIndex']);
 

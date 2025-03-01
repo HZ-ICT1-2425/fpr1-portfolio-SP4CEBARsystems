@@ -48,7 +48,7 @@
                         <p>Home</p>
                     </div>
                 </a>
-                <a href="/blog">
+                <a href="/posts">
                     <div class="rightNavButton">
                         <p>Blog</p>
                     </div>
