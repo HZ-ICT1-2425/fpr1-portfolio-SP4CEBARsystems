@@ -12,6 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{--    {!! Html::style( asset('public/css/app.css')) !!}--}}
     <link rel="stylesheet" href="{{asset('styles/style.css')}}">
+    <link rel="stylesheet" href="{{asset('styles/table.css')}}">
     {{--    <link rel="icon" type="image/x-icon" href="./assets/hz-logo.svg">--}}
 </head>
 <body>

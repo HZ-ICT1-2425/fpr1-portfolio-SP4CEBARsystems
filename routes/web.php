@@ -186,9 +186,9 @@ Route::get('blog/{id}', function () {
 });
 
 Route::get('/faq', function () {
-    return view('articles.index');
+    return view('faq.index');
 });
 
 Route::get('faq/{id}', function () {
-    return view('articles.show');
+    return view('faq.show');
 });
