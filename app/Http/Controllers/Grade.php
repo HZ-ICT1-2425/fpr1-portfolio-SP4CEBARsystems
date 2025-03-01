@@ -15,5 +15,13 @@ class Grade extends WeightedValue
     {
         return $this->value >= 5.5;
     }
+
+    public function getGrade(): float {
+        return $this->value;
+    }
+
+    public function getWeight(): float {
+        return $this->weight;
+    }
 }
 

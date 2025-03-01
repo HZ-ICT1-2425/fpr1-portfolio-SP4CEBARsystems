@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class WeightedValue extends Controller
 {
-    public float $value;
-    public float $weight;
+    protected float $value;
+    protected float $weight;
 
     public function __construct(float $value, float $weight)
     {

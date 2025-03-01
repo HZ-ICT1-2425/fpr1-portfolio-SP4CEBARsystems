@@ -7,35 +7,31 @@ use Illuminate\Http\Request;
 class Course extends Controller
 {
     public string $name;
-    private float $credits;
-    private array $grades = [];
+    public float $credits;
+    private array $exams = [];
 
-    public function __construct($name, float $credits, ...$grades)
+    public function __construct($name, float $credits, ...$exams)
     {
         $this->name = $name;
         $this->credits = $credits;
-        $this->grades = $grades;
+        $this->exams = $exams;
     }
 
-    public function addGrades(Grade ...$grades): Course
+    public function addExams(Grade ...$exams): Course
     {
-        $this->grades = array_merge($this->grades, $grades);
+        $this->exams = array_merge($this->exams, $exams);
         return $this;
     }
-
-    function sum(...$numbers) {
-        $acc = 0;
-        foreach ($numbers as $n) {
-            $acc += $n;
-        }
-        return $acc;
+    public function getExams(): array
+    {
+        return $this->exams;
     }
 
     public function getCourseGrade(): Grade
     {
         $averageGrade = new Grade(0, 0);
 
-        foreach ($this->grades as $grade) {
+        foreach ($this->exams as $grade) {
             $averageGrade->addToWeightedAverage($grade);
         }
 
