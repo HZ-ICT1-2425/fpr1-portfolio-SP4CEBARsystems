@@ -43,27 +43,27 @@
     <header>
         <nav>
             <div class="navButtons">
-                <a href="./">
+                <a href="/">
                     <div class="homeButton">
                         <p>Home</p>
                     </div>
                 </a>
-                <a href="./blog">
+                <a href="/blog">
                     <div class="rightNavButton">
                         <p>Blog</p>
                     </div>
                 </a>
-                <a href="./dashboard">
+                <a href="/dashboard">
                     <div class="rightNavButton">
                         <p>Dashboard</p>
                     </div>
                 </a>
-                <a href="./faq">
+                <a href="/faq">
                     <div class="rightNavButton">
                         <p>FAQ</p>
                     </div>
                 </a>
-                <a href="./profile">
+                <a href="/profile">
                     <div class="rightNavButton">
                         <p>Profile</p>
                     </div>
