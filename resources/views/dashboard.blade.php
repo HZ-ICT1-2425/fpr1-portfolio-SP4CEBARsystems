@@ -23,12 +23,12 @@
                                 <div class="td">{{ $quartile->name }}</div>
                                 <div class="tc">
                                     @foreach( $quartile->getCourses() as $course)
-                                        <div class="tr course">
+                                        <div class="tr course {{ $course->isPassed() ? 'passed' : 'failed' }}">
                                             <div class="td">{{ $course->name }}</div>
                                             <div class="td credits">{{ $course->credits }}</div>
                                             <div class="tc">
                                                 @foreach( $course->getExams() as $exam)
-                                                    <div class="tr exam">
+                                                    <div class="tr exam {{ $exam->isPassed() ? 'passed' : 'failed' }}">
                                                         <div class="td">{{ $exam->name }}</div>
                                                         <div class="td weight">{{ $exam->getWeight() . '%' }}</div>
                                                         <input type="number" min="1" max="10" value="{{ $exam->getGrade() }}"
