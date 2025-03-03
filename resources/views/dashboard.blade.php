@@ -32,7 +32,7 @@
                                                         <div class="td">{{ $exam->name }}</div>
                                                         <div class="td weight">{{ $exam->getWeight() . '%' }}</div>
                                                         <input type="number" min="1" max="10" value="{{ $exam->getGrade() }}"
-                                                               class="td grade"></input>
+                                                               class="td grade">
                                                     </div>
                                                 @endforeach
                                             </div>

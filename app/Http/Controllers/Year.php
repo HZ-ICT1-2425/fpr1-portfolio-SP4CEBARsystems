@@ -4,26 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class GradeManager extends Controller
+class Year extends Controller
 {
     private array $quartiles = [];
 
-    public function __construct(...$quartiles)
+    /**
+     * Creates a new year object that holds quartiles
+     * @param Quartile ...$quartiles in this year
+     */
+    public function __construct(Quartile ...$quartiles)
     {
         $this->quartiles = $quartiles;
     }
 
-    public function addQuartiles(Quartile ...$quartiles): GradeManager
+    /**
+     * @param Quartile ...$quartiles
+     * @return $this
+     */
+    public function addQuartiles(Quartile ...$quartiles): Year
     {
         $this->quartiles = array_merge($this->quartiles, $quartiles);
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function getQuartiles(): array
     {
         return $this->quartiles;
     }
 
+    /**
+     * @return float the number of credits earned by all the quartiles within this year
+     */
     public function getTotalCreditsEarned(): float
     {
         $totalCredits = 0;
@@ -33,11 +47,17 @@ class GradeManager extends Controller
         return $totalCredits;
     }
 
+    /**
+     * @return void
+     */
     public function saveGrades(): void
     {
         $_SESSION['quartiles'] = serialize($this->quartiles);
     }
 
+    /**
+     * @return void
+     */
     public function loadGrades(): void
     {
         if (isset($_SESSION['quartiles'])) {

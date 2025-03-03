@@ -19,11 +19,11 @@ class GradeController extends Controller
     }
 
     /**
-     * @return GradeManager
+     * @return Year
      */
-    private function getCourses(): GradeManager
+    private function getCourses(): Year
     {
-        $gradeManager = new GradeManager(
+        $gradeManager = new Year(
             new Quartile(
                 "Introduction to Computer Science",
                 new Course(
