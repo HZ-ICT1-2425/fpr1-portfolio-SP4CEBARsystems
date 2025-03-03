@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 class WeightedValue extends Controller
 {
     protected float $value;
