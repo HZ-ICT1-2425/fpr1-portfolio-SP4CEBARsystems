@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class PostController extends Controller
 {
-    function blogIndex() {
+    /**
+     * @return View the blog's 'index' page
+     */
+    public function blogIndex(): View
+    {
         return view('articles.index');
     }
 
-    function blogShow() {
+    /**
+     * @return View the blog's 'show' page
+     */
+    public function blogShow(): View
+    {
         return view(
             'articles.show',
             [
@@ -19,7 +27,13 @@ class PostController extends Controller
         );
     }
 
-    private function findArticle($id) {
+    /**
+     * Finds the article at the specified id
+     * @param int $id to access an article by
+     * @return array|void the found article
+     */
+    private function findArticle(int $id)
+    {
         if ($id > count($this->loadArticles()) || $id < 1) {
             abort(404, "Article not found");
         } else {
@@ -27,6 +41,9 @@ class PostController extends Controller
         }
     }
 
+    /**
+     * @return array[] all articles
+     */
     private function loadArticles(): array
     {
         return [
@@ -42,15 +59,15 @@ class PostController extends Controller
                 <li>The nav is in the main. You should not have a footer or header in main.</li>
                 <li>The stylesheet and the HTML pages are cluttered with comments.</li>
                 <li>Home, blog, and dashboard should use some or all capital letters.</li>
-                <li>nav bar should be together, it should be alligned on the left of the header but not on
+                <li>nav bar should be together, it should be aligned on the left of the header but not on
                     the right because we read from left to right.</li>
             </ul>
 
             <h3>Feedback From Paula</h3>
             <ul>
-                <li>+ It runs on github.</li>
+                <li>+ It runs on GitHub.</li>
                 <li>+ Good motivation.</li>
-                <li>Suggeston: navigation with current for example 'home'.</li>
+                <li>Suggestion: navigation with current for example 'home'.</li>
                 <li>The poster has little about yourself (it only has code).</li>
                 <li>Blog backlink.</li>
                 <li>Clean up commented code.</li>
@@ -69,13 +86,13 @@ class PostController extends Controller
                 <li>+ Clear.</li>
                 <li>+ Works well.</li>
                 <li>+ Code looks clean.</li>
-                <li>Language inconcistency.</li>
+                <li>Language inconsistency.</li>
                 <li>Lots of clutter.</li>
             </ul>
             <h3>Feedback From Damian</h3>
             <ul>
                 <li>The table is not readable for the inactive blocks.</li>
-                <li>Too much blackspace below the text about the new project on the home page.</li>
+                <li>Too much black space below the text about the new project on the home page.</li>
                 <li>Profile menu jumps.</li>
                 <li>Section tags are missing.</li>
                 <li>Footer is missing.</li>
@@ -106,13 +123,14 @@ class PostController extends Controller
                 "id" => 3,
                 "title" => "My programming biography",
                 "page_title" => "My programming biography",
-                "content" => "Since 2018 I have been enjoying programming, I started by making small programs in the BASIC
-                            programming language in an app called “Lowres Coder”. Then I made automatic calculations
+                "content" => "Since 2018 I have been enjoying programming, I started by making small programs in the
+                            BASIC
+                            programming language in an app called “LowRes Coder”. Then I made automatic calculations
                             like the abc formula and later games like Minesweeper on my calculator in TI BASIC. Then I
-                            started making games and functional programs in BASIC in Lowres Coder and later in its
-                            successor LowresNX (and I still haven't stopped). Then I learned C with Arduino to make a
+                            started making games and functional programs in BASIC in LowRes Coder and later in its
+                            successor LowResNX (and I still haven't stopped). Then I learned C with Arduino to make a
                             robot for my vwo profile paper. In 2022 I learned Processing JavaScript and Processing Java
-                            to make a simulation for the Trashbot of the engineering course of the HZ I was taking at
+                            to make a simulation for the TrashBot of the engineering course of the HZ I was taking at
                             the time. In 2023, I learned AutoHotKey because it's just convenient. I also learned React
                             and React Native so I could develop an app idea and Unity to develop another app idea. The
                             next year in 2023-2024 I learned all the ins and outs of C at Eindhoven University of
@@ -167,7 +185,7 @@ class PostController extends Controller
                                     <li>I may not be able to find an internship.</li>
                                     <li>AI may take any future jobs from me.</li>
                                     <li>Big companies may be able to steal any idea I may be working on and outpace me
-                                        in its development or use their legal capabillities against me.</li>
+                                        in its development or use their legal capabilities against me.</li>
                                 </ul>
                             </li>
                         </ul>",

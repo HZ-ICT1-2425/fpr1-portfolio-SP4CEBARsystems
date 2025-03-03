@@ -2,29 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class FaqController extends Controller
 {
-    function faqShow()
+    /**
+     * @return View
+     */
+    public function faqShow(): View
     {
         return view('faq.show');
     }
 
-    function faqIndex() {
+    /**
+     * @return View
+     */
+    public function faqIndex(): View
+    {
         $faq = $this->loadFaq();
 //        dd($faq[0]['summary']);
         return view('faq.index', ['faq' => $faq]);
     }
 
-    private function findFaq($id) {
-        if ($id > count($this->loadFaq()) || $id < 1) {
-            abort(404, "FAQ not found");
-        } else {
-            return $this->loadFaq()[$id - 1];
-        }
-    }
-
+    /**
+     * @return array[]
+     */
     private function loadFaq(): array
     {
         return [
@@ -64,7 +66,7 @@ class FaqController extends Controller
                     <li>visit <a href="https://portal.hz.nl/">portal.hz.nl</a></li>
                     <li>then navigate to
                 <ol>
-                            <li>Selfservice Portal,</li>
+                            <li>Self-service Portal,</li>
                             <li>reservations,</li>
                             <li>Book a project or meeting space,</li>
                             <li>Book a space,</li>

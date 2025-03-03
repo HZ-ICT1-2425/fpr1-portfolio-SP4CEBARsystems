@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class PageController extends Controller
 {
-    function index() {
+    /**
+     * @return View
+     */
+    public function index(): View
+    {
         return view('welcome');
     }
 
-    function profile() {
+    /**
+     * @return View
+     */
+    public function profile(): View
+    {
         return view('profile');
     }
 }
