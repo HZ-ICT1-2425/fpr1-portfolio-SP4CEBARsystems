@@ -69,6 +69,7 @@ The simplest way that ensures all the files are as close to a fresh installation
 ## Authors
 
 * **Daan de Waard** - *Initial work* - [dwaard](https://github.com/dwaard)
+* **Boaz Crezee** - *Continuation* - [SP4CEBARsystems](https://github.com/SP4CEBARsystems)
 
 See also the list of [contributors](https://github.com/HZ-HBO-ICT/laravel-skeleton-app/graphs/contributors) who
 participated in this project.
