@@ -9,4 +9,8 @@ class Post extends Model
 {
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
+    protected $fillable = ['title', 'slug', 'body'];
+//    $posts = Post::all();
+//    $posts->find(5);
+//    $posts->save();
 }
