@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index(): View
     {
         return view('articles.index', [
-            'articles' => $this->loadArticles()
+            'articles' => Post::all()
         ]);
     }
 
@@ -39,10 +39,12 @@ class PostController extends Controller
      */
     public function show(Post $post): View
     {
+//        dd($post);
+//                $this->findArticle(request('id')
         return view(
             'articles.show',
             [
-                'article' => $this->findArticle(request('id'))
+                'article' => $post
             ]
         );
     }
