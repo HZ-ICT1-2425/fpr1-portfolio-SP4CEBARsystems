@@ -13,7 +13,9 @@ class PostController extends Controller
      */
     public function index(): View
     {
-        return view('articles.index');
+        return view('articles.index', [
+            'articles' => $this->loadArticles()
+        ]);
     }
 
     /**
