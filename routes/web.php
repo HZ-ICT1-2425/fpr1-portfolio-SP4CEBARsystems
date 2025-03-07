@@ -12,10 +12,10 @@ Route::get('/dashboard', [GradeController::class, 'dashboard']);
 
 Route::get('/profile', [PageController::class, 'profile']);
 
-Route::get('/posts', [PostController::class, 'blogIndex']);
+Route::get('/posts', [PostController::class, 'index']);
 
-Route::get('posts/{id}', [PostController::class, 'blogShow']);
+Route::get('posts/{id}', [PostController::class, 'show']);
 
-Route::get('/faq', [FaqController::class, 'faqIndex']);
+Route::get('/faq', [FaqController::class, 'index']);
 
-Route::get('faq/{id}', [FaqController::class, 'faqShow']);
+Route::get('faq/{id}', [FaqController::class, 'show']);

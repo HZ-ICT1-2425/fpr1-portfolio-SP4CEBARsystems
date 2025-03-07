@@ -11,9 +11,9 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        //
+        return view('articles.index');
     }
 
     /**
@@ -35,9 +35,14 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Post $post): View
     {
-        //
+        return view(
+            'articles.show',
+            [
+                'article' => $this->findArticle(request('id'))
+            ]
+        );
     }
 
     /**
@@ -65,27 +70,6 @@ class PostController extends Controller
     }
 
     /**
-     * @return View the blog's 'index' page
-     */
-    public function blogIndex(): View
-    {
-        return view('articles.index');
-    }
-
-    /**
-     * @return View the blog's 'show' page
-     */
-    public function blogShow(): View
-    {
-        return view(
-            'articles.show',
-            [
-                'article' => $this->findArticle(request('id'))
-            ]
-        );
-    }
-
-    /**
      * Finds the article at the specified id
      * @param int $id to access an article by
      * @return array|void the found article
@@ -109,7 +93,7 @@ class PostController extends Controller
                 "id" => 1,
                 "page_title" => "Feedback",
                 "title" => "First Feedback",
-                "content" => "
+                "body" => "
             <ul>
                 <li>The navbar should be within the page width (not in the side blanks).</li>
                 <li>A list with commas, as if it were a sentence, may look strange; a semicolon may look better.
@@ -169,7 +153,7 @@ class PostController extends Controller
                 "id" => 2,
                 "page_title" => "ICT Field Of Work",
                 "title" => "ICT Field Of Work",
-                "content" => "Hello internet! I like web development, this field of engineering allows products to be
+                "body" => "Hello internet! I like web development, this field of engineering allows products to be
                             developed relatively quickly and cheaply. The distribution of software is far easier than of
                             physical products. In this field, there is plenty of work available and if that was not
                             enough,
@@ -181,7 +165,7 @@ class PostController extends Controller
                 "id" => 3,
                 "title" => "My programming biography",
                 "page_title" => "My programming biography",
-                "content" => "Since 2018 I have been enjoying programming, I started by making small programs in the
+                "body" => "Since 2018 I have been enjoying programming, I started by making small programs in the
                             BASIC
                             programming language in an app called “LowRes Coder”. Then I made automatic calculations
                             like the abc formula and later games like Minesweeper on my calculator in TI BASIC. Then I
@@ -202,7 +186,7 @@ class PostController extends Controller
                 "id" => 4,
                 "page_title" => "Study Choice",
                 "title" => "Study Choice",
-                "content" => "Hello internet! I chose this study direction because I like web development and I plan
+                "body" => "Hello internet! I chose this study direction because I like web development and I plan
                             to make online tools and apps to enrich the lives of many. I am not worried about the
                             programming aspect of this study because I have passed harder programming exams before: Last
                             year I passed a university C-exam with time to spare. I develop a JavaScript application in
@@ -214,7 +198,7 @@ class PostController extends Controller
                 "id" => 5,
                 "page_title" => "SWOT Analysis",
                 "title" => "SWOT Analysis",
-                "content" => "<ul>
+                "body" => "<ul>
                             <li>
                                 <h3>Strengths</h3>
                                 <ul>

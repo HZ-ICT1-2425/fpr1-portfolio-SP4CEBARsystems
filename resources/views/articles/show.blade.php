@@ -6,7 +6,7 @@
                     <a href="./">Return to blogs</a>
                     <h2>{{ $article["title"] }}</h2>
                     <p>
-                        {{ $article["content"] }}
+                        {{ $article["body"] }}
                     </p>
                 </div>
             </div>

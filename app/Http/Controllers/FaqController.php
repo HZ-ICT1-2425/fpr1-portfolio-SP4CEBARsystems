@@ -11,9 +11,11 @@ class FaqController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        //
+        $faq = $this->loadFaq();
+//        dd($faq[0]['summary']);
+        return view('faq.index', ['faq' => $faq]);
     }
 
     /**
@@ -35,9 +37,9 @@ class FaqController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Post $post): View
     {
-        //
+        return view('faq.show');
     }
 
     /**
@@ -62,25 +64,6 @@ class FaqController extends Controller
     public function destroy(Post $post)
     {
         //
-    }
-
-
-    /**
-     * @return View
-     */
-    public function faqShow(): View
-    {
-        return view('faq.show');
-    }
-
-    /**
-     * @return View
-     */
-    public function faqIndex(): View
-    {
-        $faq = $this->loadFaq();
-//        dd($faq[0]['summary']);
-        return view('faq.index', ['faq' => $faq]);
     }
 
     /**
