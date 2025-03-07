@@ -14,7 +14,7 @@ class FaqController extends Controller
     public function index(): View
     {
         $faq = $this->loadFaq();
-//        dd($faq[0]['summary']);
+//        dd($faq[0]['question']);
         return view('faq.index', ['faq' => $faq]);
     }
 
@@ -73,26 +73,26 @@ class FaqController extends Controller
     {
         return [
             [
-                'summary'=>'How can you print a document from your laptop at HZ?',
-                'p'=>'Go to <a href="https://hz.mynetpay.nl/">https://hz.mynetpay.nl/</a>. Log in with your
+                'question'=>'How can you print a document from your laptop at HZ?',
+                'answer'=>'Go to <a href="https://hz.mynetpay.nl/">https://hz.mynetpay.nl/</a>. Log in with your
                     school account (without @hz.nl).
                     You can upload a file at WebPrint or install the printer at MobilityPrint.
                     Please note! You need print credit to print.
                     For more information, go to the self-service portal.'
             ],
             [
-                'summary'=>'How can you scan a document and send it to your laptop at HZ?',
-                'p'=>'Go to a scanner/printer. Log in (with pass or username and password). Press
+                'question'=>'How can you scan a document and send it to your laptop at HZ?',
+                'answer'=>'Go to a scanner/printer. Log in (with pass or username and password). Press
                 Scan. If you want to scan double-sided, go to the settings and set the duplex
                 mode to 2-sided. Put your papers where they belong and press Start. Then log out
                 again
                 (top right).'
             ],
             [
-                'summary'=>'How can I buy something (like when I sign up for the IT introduction event) on
+                'question'=>'How can I buy something (like when I sign up for the IT introduction event) on
                 the
                 HZ web shop?',
-                'p'=>'Go to <a href="https://webshop.hz.nl/">https://webshop.hz.nl/</a>. Log in. Then find
+                'answer'=>'Go to <a href="https://webshop.hz.nl/">https://webshop.hz.nl/</a>. Log in. Then find
                 the
                 product you want to buy,
                 select the
@@ -102,8 +102,8 @@ class FaqController extends Controller
                 Next
                 and follow the instructions on your screen.',],
             [
-                'summary'=>'How can you book a project space?',
-                'p'=>'To book a project space:
+                'question'=>'How can you book a project space?',
+                'answer'=>'To book a project space:
                 <ol>
                     <li>visit <a href="https://portal.hz.nl/">portal.hz.nl</a></li>
                     <li>then navigate to
@@ -124,9 +124,9 @@ class FaqController extends Controller
                 </ol>'
             ],
             [
-                'summary'=>'What are the instructions if you want to park your car at the HZ parking
+                'question'=>'What are the instructions if you want to park your car at the HZ parking
                         lot?',
-                'p'=>'It is not possible to park directly at the HZ at Het Groene Woud. There is a special
+                'answer'=>'It is not possible to park directly at the HZ at Het Groene Woud. There is a special
                         parking space available on the premises for people with disabilities and/or chronic
                         conditions.
                         In the parking garage at the Kousteensedijk there are a number of spaces for

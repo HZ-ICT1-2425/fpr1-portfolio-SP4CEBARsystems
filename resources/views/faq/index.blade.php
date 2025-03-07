@@ -7,8 +7,8 @@
                     <ol>
                         @foreach($faq as $q)
                             <details>
-                                <summary>{{ $q['summary'] }}</summary>
-                                <p>{{ $q['p'] }}</p>
+                                <summary>{{ $q['question'] }}</summary>
+                                <p>{{ $q['answer'] }}</p>
                             </details>
                         @endforeach
                     </ol>
