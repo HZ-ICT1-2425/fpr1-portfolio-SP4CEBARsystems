@@ -38,15 +38,15 @@ class FaqController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post): View
+    public function show(Faq $faq): View
     {
-        return view('faq.show');
+        return view('faq.show', ['faq' => $faq]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Faq $faq)
     {
         //
     }
@@ -54,7 +54,7 @@ class FaqController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Faq $faq)
     {
         //
     }
@@ -62,7 +62,7 @@ class FaqController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Faq $faq)
     {
         //
     }
