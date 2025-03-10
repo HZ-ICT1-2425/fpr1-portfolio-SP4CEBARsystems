@@ -8,8 +8,8 @@
                         @foreach($faqs as $faq)
                             <li>
                                 <details>
-                                    <summary>{{ $faq['question'] }}</summary>
-                                    <p>{{ $faq['answer'] }}</p>
+                                    <summary>{{ $faq->question }}</summary>
+                                    <p>{{ $faq->answer }}</p>
                                 </details>
                             </li>
                         @endforeach

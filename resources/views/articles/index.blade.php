@@ -10,7 +10,7 @@
                     <ul>
                         @foreach($articles as $article)
                             <li>
-                                <a href="./posts/{{ $article['id'] }}">{{ $article['title'] }}</a>
+                                <a href="./posts/{{ $article->id }}">{{ $article->title }}</a>
                             </li>
                         @endforeach
                     </ul>

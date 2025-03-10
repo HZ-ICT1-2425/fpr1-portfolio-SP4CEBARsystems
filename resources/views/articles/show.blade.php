@@ -4,9 +4,9 @@
             <div class="textAndImage programsImageBackground firstBar">
                 <div class=textBackground>
                     <a href="./">Return to blogs</a>
-                    <h2>{{ $article["title"] }}</h2>
+                    <h2>{{ $article->title }}</h2>
                     <p>
-                        {{ $article["body"] }}
+                        {{ $article->body }}
                     </p>
                 </div>
             </div>
