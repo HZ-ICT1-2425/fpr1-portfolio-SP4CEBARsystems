@@ -5,11 +5,13 @@
                 <div class=textBackground>
                     <h2>FAQ</h2>
                     <ol>
-                        @foreach($faq as $q)
-                            <details>
-                                <summary>{{ $q['question'] }}</summary>
-                                <p>{{ $q['answer'] }}</p>
-                            </details>
+                        @foreach($faqs as $faq)
+                            <li>
+                                <details>
+                                    <summary>{{ $faq['question'] }}</summary>
+                                    <p>{{ $faq['answer'] }}</p>
+                                </details>
+                            </li>
                         @endforeach
                     </ol>
                 </div>

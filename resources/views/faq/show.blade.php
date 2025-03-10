@@ -4,14 +4,10 @@
             <div class="textAndImage codeImageBackground firstBar">
                 <div class=textBackground>
                     <h2>FAQ</h2>
-                    <ol>
-                        @foreach($faq as $q)
-                            <details>
-                                <summary>{{ $q['summary'] }}</summary>
-                                <p>{{ $q['p'] }}</p>
-                            </details>
-                        @endforeach
-                    </ol>
+                        <details>
+                            <summary>{{ $faq['question'] }}</summary>
+                            <p>{{ $faq['answer'] }}</p>
+                        </details>
                 </div>
             </div>
         </article>

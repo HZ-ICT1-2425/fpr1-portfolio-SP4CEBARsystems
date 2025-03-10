@@ -16,7 +16,7 @@ class FaqController extends Controller
     {
 //        $faq = $this->loadFaq();
 //        dd($faq[0]['question']);
-        return view('faq.index', ['faq' => Faq::all()]);
+        return view('faq.index', ['faqs' => Faq::all()]);
     }
 
     /**
