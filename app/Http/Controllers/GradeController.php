@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Exam;
+use App\Models\Quartile;
+use App\Models\Year;
 use Illuminate\Contracts\View\View;
 
 class GradeController extends Controller
@@ -82,7 +86,6 @@ class GradeController extends Controller
                 )
             )
         );
-        $gradeManager->saveGrades();
         return $gradeManager;
     }
 }

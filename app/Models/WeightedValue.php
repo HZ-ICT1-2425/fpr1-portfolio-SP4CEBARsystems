@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-class WeightedValue extends Controller
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class WeightedValue extends Model
 {
     protected float $value;
     protected float $weight;
@@ -15,6 +18,7 @@ class WeightedValue extends Controller
      */
     public function __construct(float $value, float $weight)
     {
+        parent::__construct();
         $this->value = $value;
         $this->weight = $weight;
     }

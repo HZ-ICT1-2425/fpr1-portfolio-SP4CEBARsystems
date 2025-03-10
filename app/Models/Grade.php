@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Grade extends WeightedValue
 {
@@ -13,6 +14,7 @@ class Grade extends WeightedValue
      */
     public function __construct(float $grade, float $weight)
     {
+        parent::__construct();
         parent::__construct($grade, $weight);
     }
 

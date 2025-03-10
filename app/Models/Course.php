@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-class Course extends Controller
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Course extends Model
 {
     public string $name;
     public float $credits;
@@ -16,6 +19,7 @@ class Course extends Controller
      */
     public function __construct(string $name, float $credits, Exam ...$exams)
     {
+        parent::__construct();
         $this->name = $name;
         $this->credits = $credits;
         $this->exams = $exams;

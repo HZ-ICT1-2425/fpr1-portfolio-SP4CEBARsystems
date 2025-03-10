@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-class Quartile extends Controller
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Quartile extends Model
 {
     public string $name;
     private array $courses = [];
@@ -14,6 +17,7 @@ class Quartile extends Controller
      */
     public function __construct(string $name, Course ...$courses)
     {
+        parent::__construct();
         $this->name = $name;
         $this->courses = $courses;
     }

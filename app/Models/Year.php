@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Year extends Controller
+class Year extends Model
 {
     private array $quartiles = [];
 
@@ -14,6 +15,7 @@ class Year extends Controller
      */
     public function __construct(Quartile ...$quartiles)
     {
+        parent::__construct();
         $this->quartiles = $quartiles;
     }
 
@@ -45,23 +47,5 @@ class Year extends Controller
             $totalCredits += $quartile->getTotalCreditsEarned();
         }
         return $totalCredits;
-    }
-
-    /**
-     * @return void
-     */
-    public function saveGrades(): void
-    {
-        $_SESSION['quartiles'] = serialize($this->quartiles);
-    }
-
-    /**
-     * @return void
-     */
-    public function loadGrades(): void
-    {
-        if (isset($_SESSION['quartiles'])) {
-            $this->quartiles = unserialize($_SESSION['quartiles']);
-        }
     }
 }
