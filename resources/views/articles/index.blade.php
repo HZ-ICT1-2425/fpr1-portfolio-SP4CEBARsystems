@@ -1,6 +1,7 @@
 <x-layout.main>
     <x-layout.container>
         <h2>Blog</h2>
+        <a href="./posts/create">Create new</a>
         <p>
             Choose a blog post:
         </p>
