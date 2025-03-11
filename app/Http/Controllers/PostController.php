@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 
 class PostController extends Controller
 {
@@ -23,15 +26,30 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
+    //: Application|Redirector|RedirectResponse
     {
-        //
+//        $title = request('title');
+//        $content = request('content');
+//        $slug = request('slug');
+
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'body' => 'required|string',
+            'slug' => 'required|string'
+        ]);
+
+        Post::create($validated);
+//        Post::created($validated);
+//        Post::creating($validated);
+
+        return redirect('/posts');
     }
 
     /**
@@ -54,7 +72,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('articles.edit');
     }
 
     /**
