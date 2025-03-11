@@ -45,8 +45,6 @@ class PostController extends Controller
         ]);
 
         Post::create($validated);
-//        Post::created($validated);
-//        Post::creating($validated);
 
         return redirect('/posts');
     }
@@ -91,7 +89,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect('/posts');
     }
 
     /**
