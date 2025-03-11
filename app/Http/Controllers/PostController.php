@@ -59,12 +59,7 @@ class PostController extends Controller
     {
 //        dd($post);
 //                $this->findArticle(request('id')
-        return view(
-            'articles.show',
-            [
-                'article' => $post
-            ]
-        );
+        return view('articles.show', ['post' => $post]);
     }
 
     /**
@@ -72,7 +67,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('articles.edit');
+        return view('articles.edit', ['post' => $post]);
     }
 
     /**
@@ -80,7 +75,16 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'body' => 'required|string',
+            'slug' => 'required|string'
+        ]);
+
+        $post->update($validated);
+
+        return redirect('/posts')
+        ->with('success', "Task $post->id is successfully created");
     }
 
     /**

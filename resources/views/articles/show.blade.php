@@ -1,9 +1,11 @@
 <x-layout.main>
     <x-layout.container>
         <a href="./">Return to blogs</a>
-        <h2>{{ $article->title }}</h2>
+        <br>
+        <a href="{{ route('posts.edit', $post) }}">Edit</a>
+        <h2>{{ $post->title }}</h2>
         <p>
-            {{ $article->body }}
+            {{ $post->body }}
         </p>
     </x-layout.container>
 </x-layout.main>
