@@ -32,8 +32,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    //: Application|Redirector|RedirectResponse
+    public function store(Request $request): Application|Redirector|RedirectResponse
     {
 //        $title = request('title');
 //        $content = request('content');
