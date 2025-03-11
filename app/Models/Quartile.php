@@ -15,7 +15,7 @@ class Quartile extends Model
      * @param string $name of the quartile
      * @param Course ...$courses within this quartile
      */
-    public function __construct(string $name, Course ...$courses)
+    public function __construct(string $name = '', Course ...$courses)
     {
         parent::__construct();
         $this->name = $name;

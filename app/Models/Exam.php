@@ -16,7 +16,7 @@ class Exam extends Grade
      * @param float $grade of the exam
      * @param float $weight of the exam's grade
      */
-    public function __construct(string $name, float $grade, float $weight)
+    public function __construct(string $name = '', float $grade = 0, float $weight = 0)
     {
         parent::__construct($grade, $weight);
         $this->name = $name;

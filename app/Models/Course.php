@@ -17,7 +17,7 @@ class Course extends Model
      * @param float $credits that will be earned for passing the course
      * @param Exam ...$exams within the course
      */
-    public function __construct(string $name, float $credits, Exam ...$exams)
+    public function __construct(string $name = '', float $credits = 0, Exam ...$exams)
     {
         parent::__construct();
         $this->name = $name;

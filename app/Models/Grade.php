@@ -12,9 +12,8 @@ class Grade extends WeightedValue
      * @param float $grade the grade value
      * @param float $weight the grade's weight
      */
-    public function __construct(float $grade, float $weight)
+    public function __construct(float $grade = 0, float $weight = 0)
     {
-        parent::__construct();
         parent::__construct($grade, $weight);
     }
 
