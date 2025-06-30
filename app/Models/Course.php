@@ -10,6 +10,7 @@ class Course extends Model
     public string $name;
     public float $credits;
     private array $exams;
+    protected $fillable = ['name', 'credits', 'passed_at'];
 
     /**
      * Constructs a new course object
